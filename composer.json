@@ -1,0 +1,40 @@
+{
+    "name": "herrera-io/service-monolog",
+    "description": "A service provider for Monolog.",
+    "keywords": ["monolog", "service"],
+    "homepage": "http://herrera-io.github.com/php-service-monolog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Herrera",
+            "email": "kevin@herrera.io",
+            "homepage": "http://kevin.herrera.io"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/herrera-io/php-service-monolog/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "herrera-io/service-container": "1.*",
+        "monolog/monolog": ">=1.3,<2.0-dev"
+    },
+    "require-dev": {
+        "herrera-io/phpunit-test-case": "1.*",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Herrera\\Service\\Monolog": "src/lib"
+        }
+    },
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "src/vendors"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
