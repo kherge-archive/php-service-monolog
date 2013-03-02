@@ -1,4 +1,4 @@
-php-service-monolog
-===================
+Monolog Service Provider
+========================
 
 A service provider for Monolog.
