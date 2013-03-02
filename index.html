@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Php-service-monolog by herrera-io</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Php-service-monolog</h1>
+        <p>A service provider for Monolog.</p>
+
+        <p class="view"><a href="https://github.com/herrera-io/php-service-monolog">View the Project on GitHub <small>herrera-io/php-service-monolog</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/herrera-io/php-service-monolog/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-service-monolog/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-service-monolog">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Monolog Service Provider</h1>
+
+<p><a href="https://travis-ci.org/herrera-io/php-service-monolog"><img src="https://travis-ci.org/herrera-io/php-service-monolog.png?branch=master" alt="Build Status"></a></p>
+
+<p>A service provider for Monolog.</p>
+
+<h2>Summary</h2>
+
+<p>Integrates the Monolog library into the <a href="https://github.com/herrera-io/php-service-container">Herrera.io service container</a>.</p>
+
+<h2>Installation</h2>
+
+<p>Add it to your list of Composer dependencies:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>composer require herrera-io/service-monolog<span class="o">=</span>1.*
+</pre></div>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">Herrera\Service\Container</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Herrera\Service\Monolog\MonologServiceProvider</span><span class="p">;</span>
+
+<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">MonologServiceProvider</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'monolog.options'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'handler.stream'</span> <span class="o">=&gt;</span> <span class="nx">STDOUT</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">));</span>
+
+<span class="nv">$container</span><span class="p">[</span><span class="s1">'monolog'</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">debug</span><span class="p">(</span><span class="s1">'A debug message!'</span><span class="p">);</span>
+</pre></div>
+
+<p>Running it:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>php script.php
+<span class="o">[</span>2013-03-01 22:41:44<span class="o">]</span> default.DEBUG: A debug message! <span class="o">[]</span> <span class="o">[]</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/herrera-io">herrera-io</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
